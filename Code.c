@@ -24,7 +24,7 @@ int main()
 		scanf("%d",&b[i]);
 		b1[i]=b[i];	
 	}
-		printf("\n1st ITERATION \n");
+	printf("\n1st ITERATION \n");
 	for(i=0;i<m;i++)
 	{  
 	if(a[i]<=tq1+a[i-1])
@@ -41,5 +41,23 @@ int main()
 		printf("For process %d\n",i+1);
 		printf("Left Burst time= %d\n",b[i]);	
 		}
+	}
+	printf("\n2nd ITERATION\n");
+	for(i=0;i<m;i++)
+	{
+	if(a[i]<=tq2+a[i-1])
+	{
+	
+		b[i]=b[i]-tq2;
+		
+		printf("\nFor process %d\n",i+1);
+		printf("Left Burst time= %d\n",b[i]);}
+		else
+		{
+		b[i]=b[i]-tq2;
+	
+		printf("For process %d\n",i+1);
+		printf("Left Burst time= %d\n",b[i]);	
+		}	
 	}
 }
