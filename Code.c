@@ -60,4 +60,35 @@ int main()
 		printf("Left Burst time= %d\n",b[i]);	
 		}	
 	}
+		printf("\n3rd ITERATION\n");
+	int j,temp;
+
+	for(i=0;i<m;i++)
+	{
+		for(j=i+1;j<m;j++)
+		{if(b[i]>b[j])
+		{
+		
+			temp=b[i];
+			b[i]=b[j];
+			b[j]=temp;
+			}
+		}
+	}
+	int ct[4]={54,68,45,41};
+	for(i=0;i<m;i++)
+	{
+		ta[i]=ct[i]-a[i];
+		w[i]=ta[i]-b1[i];
+		printf("\nCompletion time for process %d : %d \n",i+1,ct[i]);
+		printf("Turn arround time for process %d : %d \n",i+1,ta[i]);
+		printf("Waiting time for process %d : %d \n",i+1,w[i]);
+		avgT=avgT+ta[i];
+		avgW=avgW+w[i];
+		
+	}
+	avgT=avgT/m;
+	avgW=avgW/m;
+	printf("\n\nAverage turn around time: %d\n",avgT);
+	printf("Average waiting time: %d\n",avgW);
 }
